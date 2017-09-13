@@ -188,10 +188,7 @@
       
         <h1 id="Markdown语法学习"><a href="#Markdown语法学习" class="headerlink" title="Markdown语法学习"></a>Markdown语法学习</h1><p>Tags（空格分隔）： Markdown</p>
 <hr>
-<p>####标题(Atx形式)</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>####一级标题与二级标题的另一种写法(Setext 形式)</p>
-<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><p>####无序列表</p>
-<ul>
+<h4 id="标题-Atx形式"><a href="#标题-Atx形式" class="headerlink" title="标题(Atx形式)"></a>标题(Atx形式)</h4><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h4 id="一级标题与二级标题的另一种写法-Setext-形式"><a href="#一级标题与二级标题的另一种写法-Setext-形式" class="headerlink" title="一级标题与二级标题的另一种写法(Setext 形式)"></a>一级标题与二级标题的另一种写法(Setext 形式)</h4><h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>
 <li>1</li>
 <li>2</li>
 <li>3<br>或者</li>
@@ -206,44 +203,63 @@
 <li>2</li>
 <li>3</li>
 </ul>
-<p>####有序列表</p>
-<ol>
+<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><ol>
 <li>1</li>
 <li>2</li>
 <li>3</li>
 </ol>
 <p><strong>要在列表项目中放引用，那&gt;需要缩进，如果放代码区块，那需要缩进两个tab(8个空格)</strong></p>
-<p>####引用</p>
-<blockquote>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><blockquote>
 <p>这里是引用</p>
 </blockquote>
-<p>####引用内的引用</p>
-<blockquote>
+<h4 id="引用内的引用"><a href="#引用内的引用" class="headerlink" title="引用内的引用"></a>引用内的引用</h4><blockquote>
 <p>这里是引用</p>
 <blockquote>
 <p>这里是引用内的引用</p>
-<p>###这里是引用内的三级标题</p>
+<h3 id="这里是引用内的三级标题"><a href="#这里是引用内的三级标题" class="headerlink" title="这里是引用内的三级标题"></a>这里是引用内的三级标题</h3></blockquote>
 </blockquote>
-</blockquote>
-<p>####插入链接(行内形式)<br><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
-<p>####插入链接(参考形式)</p>
-<p><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
-<p>####插入链接(隐式链接)<br><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
-<p>####插入图片(行内形式)<br><img src="http://mouapp.com/Mou_128.png" alt="Mou icon"></p>
-<p>####插入图片(参考形式)<br><img src="http://mouapp.com/Mou_128.png" alt="Mou icon"></p>
-<p><strong>参考形式中间要空一行</strong></p>
-<p><strong>插入链接或者插入图片，如果要带上title，都是在后面加上”title的名字”</strong></p>
-<p>####粗体<br><strong>这里是粗体</strong></p>
-<p>####斜体<br><em>这里是斜体</em><br><em>这里是斜体2</em></p>
-<p>####表格<br>| Tables | Are | Cool |<br>| —— | :—-: | —-:|<br>| col3   | col2 | col5 |<br>| col3   | col2 | col5 |<br>| col3   | col2 | col5 |</p>
-<p>####代码框<br>感觉不太对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class Main&#123;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">       System.out.println(&quot;Hello World&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>####分割线<br>下面是分割线</p>
+<h4 id="插入链接-行内形式"><a href="#插入链接-行内形式" class="headerlink" title="插入链接(行内形式)"></a>插入链接(行内形式)</h4><p><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
+<h4 id="插入链接-参考形式"><a href="#插入链接-参考形式" class="headerlink" title="插入链接(参考形式)"></a>插入链接(参考形式)</h4><p><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
+<h4 id="插入链接-隐式链接"><a href="#插入链接-隐式链接" class="headerlink" title="插入链接(隐式链接)"></a>插入链接(隐式链接)</h4><p><a href="http://baidu.com" target="_blank" rel="external">Baidu</a></p>
+<h4 id="插入图片-行内形式"><a href="#插入图片-行内形式" class="headerlink" title="插入图片(行内形式)"></a>插入图片(行内形式)</h4><p><img src="http://mouapp.com/Mou_128.png" alt="Mou icon"></p>
+<h4 id="插入图片-参考形式"><a href="#插入图片-参考形式" class="headerlink" title="插入图片(参考形式)"></a>插入图片(参考形式)</h4><p><img src="http://mouapp.com/Mou_128.png" alt="Mou icon"></p>
+<p><strong> 参考形式中间要空一行</strong></p>
+<p><strong> 插入链接或者插入图片，如果要带上title，都是在后面加上”title的名字”</strong></p>
+<h4 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h4><p><strong>这里是粗体</strong></p>
+<h4 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h4><p><em>这里是斜体</em><br><em>这里是斜体2</em></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><table>
+<thead>
+<tr>
+<th>Tables</th>
+<th style="text-align:center">Are</th>
+<th style="text-align:right">Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col3</td>
+<td style="text-align:center">col2</td>
+<td style="text-align:right">col5</td>
+</tr>
+<tr>
+<td>col3</td>
+<td style="text-align:center">col2</td>
+<td style="text-align:right">col5</td>
+</tr>
+<tr>
+<td>col3</td>
+<td style="text-align:center">col2</td>
+<td style="text-align:right">col5</td>
+</tr>
+</tbody>
+</table>
+<h4 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h4><p>感觉不太对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class Main&#123;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">       System.out.println(&quot;Hello World&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h4><p>下面是分割线</p>
 <hr>
 <p>上面是分割线</p>
-<p>####HTML与Markdown</p>
-<p><table><br>    <tr><br>        <td>HTML</td><br>        <td><strong>Markdown</strong></td><br>    </tr><br></table><br><strong>在HTML区块标签间的Markdown格式语法将不会被处理，HTML的区块标签如：div、table、pre、p等标签。</strong></p>
-<p><span><strong>Markdown</strong></span><br><strong>HTML 的区段（行内）标签如 span、cite、del 可以在 Markdown 的段落、列表或是标题里随意使用。</strong></p>
-<p>####特殊字符自动转换<br>&copy;<br>AT&amp;T<br>4 &lt; 5</p>
+<h4 id="HTML与Markdown"><a href="#HTML与Markdown" class="headerlink" title="HTML与Markdown"></a>HTML与Markdown</h4><p><table><br>    <tr><br>        <td>HTML</td><br>        <td><strong>Markdown</strong></td><br>    </tr><br></table><br><strong> 在HTML区块标签间的Markdown格式语法将不会被处理，HTML的区块标签如：div、table、pre、p等标签。 </strong></p>
+<p><span><strong>Markdown</strong></span><br><strong> HTML 的区段（行内）标签如 span、cite、del 可以在 Markdown 的段落、列表或是标题里随意使用。 </strong></p>
+<h4 id="特殊字符自动转换"><a href="#特殊字符自动转换" class="headerlink" title="特殊字符自动转换"></a>特殊字符自动转换</h4><p>&copy;<br>AT&amp;T<br>4 &lt; 5</p>
 <p>段落空行测试</p>
 <pre><code>段落锻炼锻炼，这是一个段落
 </code></pre><p>段落空行测试</p>
