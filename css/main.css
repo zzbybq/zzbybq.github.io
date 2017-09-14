@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #c6ff34;
+  background: #c4ffed;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2915,8 +2915,6 @@ hr {
   transition: transform 1.5s ease-out;
 }
 img:hover {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   -webkit-transform: rotateZ(360deg);
