@@ -113,18 +113,18 @@
 
 
 
-<meta name="description" content="���Ǻ���֮ǰ��¼��String��StringBuffer��StringBuilder��һ���ܽ�…">
+<meta name="description" content="这是很早之前记录的String、StringBuffer、StringBuilder的一点总结…">
 <meta name="keywords" content="String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String-����ɱ�����">
+<meta property="og:title" content="String-反射可变内容">
 <meta property="og:url" content="http://driftydream.vip/2017/09/15/String、StringBuffer、StringBuilder/index.html">
 <meta property="og:site_name" content="ZZBYBQ&#39;s Blog">
-<meta property="og:description" content="���Ǻ���֮ǰ��¼��String��StringBuffer��StringBuilder��һ���ܽ�…">
+<meta property="og:description" content="这是很早之前记录的String、StringBuffer、StringBuilder的一点总结…">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T10:59:00.997Z">
+<meta property="og:updated_time" content="2017-09-15T11:02:26.281Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String-����ɱ�����">
-<meta name="twitter:description" content="���Ǻ���֮ǰ��¼��String��StringBuffer��StringBuilder��һ���ܽ�…">
+<meta name="twitter:title" content="String-反射可变内容">
+<meta name="twitter:description" content="这是很早之前记录的String、StringBuffer、StringBuilder的一点总结…">
 
 
 
@@ -160,7 +160,7 @@
 
 
 
-  <title>String-����ɱ����� | ZZBYBQ's Blog</title>
+  <title>String-反射可变内容 | ZZBYBQ's Blog</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">String-����ɱ�����</h1>
+          <h1 class="post-title" itemprop="name headline">String-反射可变内容</h1>
         
 
         <div class="post-meta">
@@ -377,45 +377,45 @@
 
       
         <hr>
-<p>���Ǻ���֮ǰ��¼��String��StringBuffer��StringBuilder��һ���ܽ�…</p>
+<p>这是很早之前记录的String、StringBuffer、StringBuilder的一点总结…</p>
 <a id="more"></a>
-<h3 id="String�������"><a href="#String�������" class="headerlink" title="String�������"></a>String�������</h3><ul>
-<li>String����final�ģ����ɱ��̳С�public final class String</li>
-<li>String��ı������ַ�����char[]</li>
-<li>String��ʵ��һ�������Ͳ����ٸı��ˣ��������ֲ��ɱ������ܶ���ʱ����(StringBuffer�ǿɱ��)</li>
-<li>������ʽ<ul>
-<li>��һ��:String str = “abc”,”abc”�ͱ�ʾһ���ַ������󣬶�str��”abc”����ĵ�ַ��Ҳ����”abc”���������;</li>
-<li>�ڶ���:ʹ��new�ؼ��ִ����ַ���������String s1 = new String(“abc”);</li>
-<li>������:ʹ�ô��������µ��ַ���������String s3 = “ab” + “c”;</li>
+<h3 id="String类的性质"><a href="#String类的性质" class="headerlink" title="String类的性质"></a>String类的性质</h3><ul>
+<li>String类是final的，不可被继承。public final class String</li>
+<li>String类的本质是字符数组char[]</li>
+<li>String的实例一旦产生就不会再改变了，由于这种不可变会产生很多临时变量(StringBuffer是可变的)</li>
+<li>创建方式<ul>
+<li>第一种:String str = “abc”,”abc”就表示一个字符串对象，而str是”abc”对象的地址，也叫做”abc”对象的引用;</li>
+<li>第二种:使用new关键字创建字符串，比如String s1 = new String(“abc”);</li>
+<li>第三种:使用串联生成新的字符串，比如String s3 = “ab” + “c”;</li>
 </ul>
 </li>
-<li>ʹ��String��һ������������ִ�е�˫���Ű����ַ��������ʱ����String str = “123”,JVM���ȵ�����������ң�����еĻ�</li>
-<li>String��intern()����</li>
+<li>使用String不一定创建对象，在执行到双引号包含字符串的语句时，如String str = “123”,JVM会先到常量池里查找，如果有的话</li>
+<li>String的intern()方法</li>
 </ul>
-<h3 id="String��һЩ���÷���"><a href="#String��һЩ���÷���" class="headerlink" title="String��һЩ���÷���"></a>String��һЩ���÷���</h3><ul>
-<li>int length()  –��ȡ����</li>
-<li>char charAt(int index) –����ָ��λ���ַ�</li>
-<li>char[] toCharArray();  —���ַ���ת����һ���µ��ַ�����</li>
-<li>int indexOf(String str,int fromIndex);  —���Ҵ�fromIndex��ʼ��str���ַ����е�λ��,��indexOf�����෴��lastIndexOf(..) —������ַ���ʼ���ң���������</li>
-<li>boolean contains(String str); —�ж��Ƿ����ĳ���ַ�����ʵ����contains�ڲ�ʵ��Ҳ�ǵ��õ�indexOf,Ȼ��������-1��Ƚ�</li>
-<li>boolean startsWith(String str); —�ж��ַ����Ƿ���str��ͷ</li>
-<li>boolean endsWith(String str)��   —�ж��ַ����Ƿ���str��β</li>
-<li>String replace(CharSequence target,CharSequence replaccement);  —�滻�ַ�</li>
-<li>String substring(int beginIndex,int endIndex);   —�ַ�����ȡ����������ڶ����������ʾ��ȡ���ַ���ĩβ</li>
-<li>String[] split(String regex); —�ַ����ָ�</li>
+<h3 id="String的一些常用方法"><a href="#String的一些常用方法" class="headerlink" title="String的一些常用方法"></a>String的一些常用方法</h3><ul>
+<li>int length()  –获取长度</li>
+<li>char charAt(int index) –返回指定位置字符</li>
+<li>char[] toCharArray();  —将字符串转换成一个新的字符数组</li>
+<li>int indexOf(String str,int fromIndex);  —查找从fromIndex开始，str在字符串中的位置,与indexOf含义相反有lastIndexOf(..) —从最后字符开始查找，反向索引</li>
+<li>boolean contains(String str); —判断是否包含某个字符串，实际上contains内部实现也是调用的indexOf,然后将其结果与-1相比较</li>
+<li>boolean startsWith(String str); —判断字符串是否以str开头</li>
+<li>boolean endsWith(String str)；   —判断字符串是否以str结尾</li>
+<li>String replace(CharSequence target,CharSequence replaccement);  —替换字符</li>
+<li>String substring(int beginIndex,int endIndex);   —字符串截取，如果不传第二个参数则表示截取到字符串末尾</li>
+<li>String[] split(String regex); —字符串分割</li>
 </ul>
-<h3 id="String��StringBuffer��StringBuilder������"><a href="#String��StringBuffer��StringBuilder������" class="headerlink" title="String��StringBuffer��StringBuilder������"></a>String��StringBuffer��StringBuilder������</h3><ul>
-<li>String:���ɱ��ַ�����</li>
-<li>StringBuffer:�̰߳�ȫ�Ŀɱ��ַ�����</li>
-<li>StringBuilder:���̰߳�ȫ�Ŀɱ��ַ�����<br><strong> ע������String��StringBuffer�ɲ��ɱ䣬��������ָ�����е�value[]�ַ�����ɲ��ɱ䣬�����Ƕ������ÿɲ��ɱ䡣</strong><br>��ͬ�㣺StringBuffer������߳̽����ַ�������������Ϊ��Դ������StringBuffeer�ĺܶ෽�������ؼ���synchronized�����ˣ���StringBuilderû�С�<br>���̱߳����StringBuffer��StringBuilderҪ��ȫ���ˣ�����ж���߳���Ҫ��ͬһ���ַ������������в�����ʱ��Ӧѡ��StringBuffer��StringBuilder��Ч�ʱ�StringBuffer�Ըߣ�����������̰߳�ȫ��StringBuilderӦ������ѡ��</li>
+<h3 id="String、StringBuffer、StringBuilder的区别"><a href="#String、StringBuffer、StringBuilder的区别" class="headerlink" title="String、StringBuffer、StringBuilder的区别"></a>String、StringBuffer、StringBuilder的区别</h3><ul>
+<li>String:不可变字符序列</li>
+<li>StringBuffer:线程安全的可变字符序列</li>
+<li>StringBuilder:非线程安全的可变字符序列<br><strong> 注：讨论String和StringBuffer可不可变，本质上是指对象中的value[]字符数组可不可变，而不是对象引用可不可变。</strong><br>不同点：StringBuffer允许多线程进行字符操作，这是因为在源代码中StringBuffeer的很多方法都被关键字synchronized修饰了，而StringBuilder没有。<br>多线程编程中StringBuffer比StringBuilder要安全多了，如果有多个线程需要对同一个字符串缓冲区进行操作的时候，应选择StringBuffer，StringBuilder的效率比StringBuffer稍高，如果不考虑线程安全，StringBuilder应该是首选。</li>
 </ul>
-<h3 id="String��StringBuffer��StringBuilder��ʹ�o���"><a href="#String��StringBuffer��StringBuilder��ʹ�o���" class="headerlink" title="String��StringBuffer��StringBuilder��ʹ�ó���"></a>String��StringBuffer��StringBuilder��ʹ�ó���</h3><ul>
-<li>ʹ��String��ĳ���:���ַ����������仯�ĳ����п���ʹ��String�࣬���糣���������������ı������㡣</li>
-<li>ʹ��StringBuffer��ĳ���:��Ƶ�������ַ�������(��ƴ�ӡ��滻��ɾ����)������������<strong> ���߳�</strong>�Ļ����У�����Կ���ʹ��StringBuffer,����XML������HTTP���������ͷ�װ��</li>
-<li>ʹ��StringBuilder��ĳ���:��Ƶ�������ַ�������(��ƴ�ӡ��滻��ɾ����)������������<strong> ���߳�</strong>�Ļ����У�����Կ���ʹ��StringBuilder����SQL����ƴװ��JSON��װ�ȡ�</li>
+<h3 id="String、StringBuffer、StringBuilder的使用场景"><a href="#String、StringBuffer、StringBuilder的使用场景" class="headerlink" title="String、StringBuffer、StringBuilder的使用场景"></a>String、StringBuffer、StringBuilder的使用场景</h3><ul>
+<li>使用String类的场景:在字符串不经常变化的场景中可以使用String类，例如常量的声明，少量的变量运算。</li>
+<li>使用StringBuffer类的场景:在频繁进行字符串运算(如拼接、替换、删除等)，并且运行在<strong> 多线程</strong>的环境中，则可以考虑使用StringBuffer,例如XML解析、HTTP参数解析和封装。</li>
+<li>使用StringBuilder类的场景:在频繁进行字符串运算(如拼接、替换、删除等)，并且运行在<strong> 单线程</strong>的环境中，则可以考虑使用StringBuilder，如SQL语句的拼装、JSON封装等。</li>
 </ul>
-<h3 id="String����װ�ַ���ʱʵ�ֵL���"><a href="#String����װ�ַ���ʱʵ�ֵL���" class="headerlink" title="String����װ�ַ���ʱʵ�ֵĻ���"></a>String����װ�ַ���ʱʵ�ֵĻ���</h3><p>�ַ����� char[] ʹ��StringBuilder��append����ʵ����װ<br>���ڲ�ͬ���ַ���������������ߵ��ַ���Ϊ��������StringBuilder����Ȼ�����ζ��ұ߽���append���������StringBuilder����ͨ��toString()����ת����String����(ע��:�м�Ķ���ַ������������Զ�ƴ��)��<br><strong> ��ʹ��+���ж���ַ�������ʱ��ʵ�����ǲ�����һ��StringBuilder�����һ��String����</strong></p>
-<p>���ǿ��һ��:��Ҫ��˵��String���ͺ�StringBuffer���͵���Ҫ����������ʵ����String�ǲ��ɱ�Ķ��������ÿ�ζ�String���ͽ��иı��ʱ����ʵ����ͬ��������һ���µ�String����Ȼ��ָ��ָ���µ�String�������Ծ����ı����ݵ��ַ�����ò�Ҫ��String,���ÿ�����ɶ��󶼻��ϵͳ���ܲ���Ӱ�죬�ر��ڴ��������ö�������Ժ�JVM��GC�ͻῪʼ���������ٶ���һ�����൱���ġ�</p>
+<h3 id="String在组装字符串时实现的机制"><a href="#String在组装字符串时实现的机制" class="headerlink" title="String在组装字符串时实现的机制"></a>String在组装字符串时实现的机制</h3><p>字符数组 char[] 使用StringBuilder的append方法实现组装<br>对于不同的字符串，首先以最左边的字符串为参数创建StringBuilder对象，然后依次对右边进行append操作，最后将StringBuilder对象通过toString()方法转换成String对象(注意:中间的多个字符串常量不会自动拼接)。<br><strong> 当使用+进行多个字符串连接时，实际上是产生了一个StringBuilder对象和一个String对象</strong></p>
+<p>最后强调一点:简要的说，String类型和StringBuffer类型的主要性能区别其实在于String是不可变的对象，因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用String,因此每次生成对象都会对系统性能产生影响，特别当内存中无引用对象多了以后，JVM的GC就会开始工作，那速度是一定会相当慢的。</p>
 
       
     </div>
@@ -613,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String�������"><span class="nav-number">1.</span> <span class="nav-text">String�������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String��һЩ���÷���"><span class="nav-number">2.</span> <span class="nav-text">String��һЩ���÷���</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String��StringBuffer��StringBuilder������"><span class="nav-number">3.</span> <span class="nav-text">String��StringBuffer��StringBuilder������</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String��StringBuffer��StringBuilder��ʹ�o���"><span class="nav-number">4.</span> <span class="nav-text">String��StringBuffer��StringBuilder��ʹ�ó���</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String����װ�ַ���ʱʵ�ֵL���"><span class="nav-number">5.</span> <span class="nav-text">String����װ�ַ���ʱʵ�ֵĻ���</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String类的性质"><span class="nav-number">1.</span> <span class="nav-text">String类的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String的一些常用方法"><span class="nav-number">2.</span> <span class="nav-text">String的一些常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String、StringBuffer、StringBuilder的区别"><span class="nav-number">3.</span> <span class="nav-text">String、StringBuffer、StringBuilder的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String、StringBuffer、StringBuilder的使用场景"><span class="nav-number">4.</span> <span class="nav-text">String、StringBuffer、StringBuilder的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String在组装字符串时实现的机制"><span class="nav-number">5.</span> <span class="nav-text">String在组装字符串时实现的机制</span></a></li></ol></div>
             
 
           </div>
