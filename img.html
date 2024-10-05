@@ -4,7 +4,152 @@
     <meta charset="UTF-8">
     <title>会员卡 - TIL551V02</title>
 </head>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js "></script>
+<script src="https://wxgolfbooking.missionhillschina.com/js/jquery-1.11.3.min.js?v=20210709"></script>
+<script src="https://wxgolfbooking.missionhillschina.com/js/layer/layer.js?v=20210709"></script>
+<script src="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.js?v=20210709"></script>
+<script src="https://wxgolfbooking.missionhillschina.com/js/main.js?v=20210709"></script>
+<script src="https://wxgolfbooking.missionhillschina.com/js/Page/index.js?v=20240918"></script>
+
+<link href="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/main.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/index.css?v=20210709" rel="stylesheet" />
 <body>
-<img src="../images/img_1.png" alt="描述图片的文字">
+<form method="post" action="./index.aspx" id="form1">
+<img src="../images/img_2.png" alt="描述图片的文字">
+
+<div class="footer-box">
+<div class="cus-tabbar">
+    <a id="tabIndex" onclick="goPage(0)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_home.png" alt="">
+        <span id="FooterTabbar_Label1">首页</span>
+    </a>
+    <a id="tabOrder" onclick="goPage(1)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_dd.png" alt="">
+        <span id="FooterTabbar_Label2">订单</span>
+    </a>
+    <a id="tabMemberCard" onclick="goPage(2)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyk.png" alt="">
+        <span id="FooterTabbar_Label4">会员卡</span>
+    </a>
+    <a id="tabStatements" onclick="goPage(3)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_yjd.png" alt="">
+        <span id="FooterTabbar_Label5">月结单</span>
+    </a>
+    <a id="tabCenter" onclick="goPage(4)" class="cus-tabbar-item">
+        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyzx.png" alt="">
+        <span id="FooterTabbar_Label3">个人中心</span>
+    </a>
+</div>
+
+    <style>
+        .cus-tabbar {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            z-index: 500;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #B17A44;
+            font-size: 14px;
+            color: white;
+            height: 60px;
+            overflow: hidden;
+            padding-bottom:20px;
+        }
+
+        .cus-tabbar-item {
+            width: 0;
+            flex-grow: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cus-tabbar-item > img {
+            width: 30px;
+            height:30px;
+        }
+
+        .cus-tabbar-item > span {
+        }
+    </style>
+
+    <script>
+        //页面初始化
+        $(function () {
+            $('.cus-tabbar-item').each(function () {
+                tabChange(this);
+            });
+        });
+
+
+        function tabChange(oneTab) {
+            var imgPath = '../img/FootTabbar/';
+            var curHerf = window.location.pathname.toLowerCase();
+
+            if ($(oneTab)[0].id == "tabIndex" && (curHerf.indexOf("/index.aspx") >= 0 || curHerf.indexOf("/indexhk.aspx") >= 0)) {
+                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_home_bs.png');
+                return false;
+            }
+
+            if ($(oneTab)[0].id == "tabOrder" && curHerf.indexOf("/orderlist.aspx") >= 0) {
+                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_dd_bs.png')
+                return false;
+            }
+
+            if ($(oneTab)[0].id == "tabMemberCard" && curHerf.indexOf("/mycard.aspx") >= 0) {
+                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyk_bs.png')
+                return false;
+            }
+
+            if ($(oneTab)[0].id == "tabStatements" && curHerf.indexOf("/statementsmonthly.aspx") >= 0) {
+                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_yjd_bs.png')
+                return false;
+            }
+
+            if ($(oneTab)[0].id == "tabCenter" && curHerf.indexOf("/personalcenter.aspx") >= 0) {
+                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyzx_bs.png')
+                return false;
+            }
+        }
+
+        function goPage(index) {
+            var curHerf = window.location.pathname.toLowerCase();
+
+            if (index == 0) {
+                window.location.href = "../Index.aspx";
+            }
+            else if (index == 1 && curHerf.indexOf("/orderlist.aspx") < 0) {
+                window.location.href = "../User/OrderList.aspx";
+            }
+            else if (index == 2 && curHerf.indexOf("/mycard.aspx") < 0) {
+                window.location.href = "../img.html";
+            }
+            else if (index == 3 && curHerf.indexOf("/statementsmonthly.aspx") < 0) {
+                window.location.href = "../Account/StatementsMonthly.aspx";
+            }
+            else if (index == 4 && curHerf.indexOf("/personalcenter.aspx") < 0) {
+                window.location.href = "../User/PersonalCenter.aspx";
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?01253411631a2613e973b389349750f8";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</div>
+</form>
 </body>
 </html>
