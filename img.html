@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover" />
     <title>会员卡 - TIL551V02</title>
-</head>
+
 <script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js "></script>
 <script src="https://wxgolfbooking.missionhillschina.com/js/jquery-1.11.3.min.js?v=20210709"></script>
 <script src="https://wxgolfbooking.missionhillschina.com/js/layer/layer.js?v=20210709"></script>
@@ -12,9 +13,33 @@
 <script src="https://wxgolfbooking.missionhillschina.com/js/Page/index.js?v=20240918"></script>
 
 <link href="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/main.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/index.css?v=20210709" rel="stylesheet" />
+
+    <script>
+        $(function () {
+            //微信接口注入权限验证配置
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc
+                appId: '', // 必填，公众号的唯一标识
+                timestamp: '', // 必填，生成签名的时间戳
+                nonceStr: '', // 必填，生成签名的随机串
+                signature: '',// 必填，签名
+                jsApiList: ['scanQRCode'], // 必填，需要使用的JS接口列表
+                openTagList: ['wx-open-launch-weapp']
+            });
+
+            wx.ready(function () {
+                // config信息验证后会执行 ready 方法，所有接口调用都必须在 config 接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在 ready 函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在 ready 函数中
+            });
+
+            wx.error(function (res) {
+                // config信息验证失败会执行 error 函数，如签名过期导致验证失败，具体错误信息可以打开 config 的debug模式查看，也可以在返回的 res 参数中查看，对于 SPA 可以在这里更新签名
+            });
+        });
+    </script>
+</head>
 <body>
 <form method="post" action="./index.aspx" id="form1">
-<img src="../images/img_2.png" alt="描述图片的文字">
+<img src="../images/img_4.png" alt="描述图片的文字">
 
 <div class="footer-box">
 <div class="cus-tabbar">
