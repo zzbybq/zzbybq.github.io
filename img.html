@@ -1,182 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-Hans">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover" />
-    <title>会员卡 - TIL551V02</title>
-
-<script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js "></script>
-<script src="https://wxgolfbooking.missionhillschina.com/js/jquery-1.11.3.min.js?v=20210709"></script>
-<script src="https://wxgolfbooking.missionhillschina.com/js/layer/layer.js?v=20210709"></script>
-<script src="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.js?v=20210709"></script>
-<script src="https://wxgolfbooking.missionhillschina.com/js/main.js?v=20210709"></script>
-<script src="https://wxgolfbooking.missionhillschina.com/js/Page/index.js?v=20240918"></script>
-
-<link href="https://wxgolfbooking.missionhillschina.com/component/swiper/swiper.min.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/main.css?v=20210709" rel="stylesheet" /><link href="https://wxgolfbooking.missionhillschina.com/css/Page/index.css?v=20210709" rel="stylesheet" />
-
-    <script>
-        $(function () {
-            //微信接口注入权限验证配置
-            wx.config({
-                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc
-                appId: '', // 必填，公众号的唯一标识
-                timestamp: '', // 必填，生成签名的时间戳
-                nonceStr: '', // 必填，生成签名的随机串
-                signature: '',// 必填，签名
-                jsApiList: ['scanQRCode'], // 必填，需要使用的JS接口列表
-                openTagList: ['wx-open-launch-weapp']
-            });
-
-            wx.ready(function () {
-                // config信息验证后会执行 ready 方法，所有接口调用都必须在 config 接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在 ready 函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在 ready 函数中
-            });
-
-            wx.error(function (res) {
-                // config信息验证失败会执行 error 函数，如签名过期导致验证失败，具体错误信息可以打开 config 的debug模式查看，也可以在返回的 res 参数中查看，对于 SPA 可以在这里更新签名
-            });
-        });
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="theme-color" content="#b6814c">
+  <title>会员码 - TIL551V02</title>
+  <link rel="stylesheet" href="css/mission-hills-app.css">
 </head>
 <body>
-<form method="post" action="./index.aspx" id="form1">
-    <div class="main-box">
-<img src="../images/img_2.png" alt="描述图片的文字" width="393px">
-    </div>
+  <main class="app-shell member-shell" aria-label="会员码" data-member-number="TIL551V02" data-code-endpoint="">
+    <header class="mini-header">
+      <h1 class="mini-title">会员码</h1>
+      <div class="mini-capsule" aria-hidden="true"><span class="mini-capsule-dots">•••</span><span class="mini-capsule-line"></span></div>
+    </header>
 
-<div class="footer-box">
-<div class="cus-tabbar">
-    <a id="tabIndex" onclick="goPage(0)" class="cus-tabbar-item">
-        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_home.png" alt="">
-        <span id="FooterTabbar_Label1">首页</span>
-    </a>
-    <a id="tabOrder" onclick="goPage(1)" class="cus-tabbar-item">
-        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_dd.png" alt="">
-        <span id="FooterTabbar_Label2">订单</span>
-    </a>
-    <a id="tabMemberCard" onclick="goPage(2)" class="cus-tabbar-item">
-        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyk.png" alt="">
-        <span id="FooterTabbar_Label4">会员卡</span>
-    </a>
-    <a id="tabStatements" onclick="goPage(3)" class="cus-tabbar-item">
-        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_yjd.png" alt="">
-        <span id="FooterTabbar_Label5">月结单</span>
-    </a>
-    <a id="tabCenter" onclick="goPage(4)" class="cus-tabbar-item">
-        <img src="https://wxgolfbooking.missionhillschina.com/img/FootTabbar/foot_hyzx.png" alt="">
-        <span id="FooterTabbar_Label3">个人中心</span>
-    </a>
-</div>
+    <section class="member-content">
+      <figure class="physical-card">
+        <img src="images/member-card.jpg" alt="观澜湖实体会员卡">
+      </figure>
+      <div class="carousel-dot" aria-hidden="true"></div>
 
-    <style>
-        .cus-tabbar {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            flex-direction: row;
-            position: fixed;
-            z-index: 500;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #B17A44;
-            font-size: 14px;
-            color: white;
-            height: 60px;
-            overflow: hidden;
-            padding-bottom:20px;
-        }
+      <article class="member-panel">
+        <div class="identity-row">
+          <div class="avatar-block">
+            <div class="avatar-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="12" fill="currentColor"/><path d="M12 57c2-15 9-22 20-22s18 7 20 22" fill="currentColor"/></svg>
+            </div>
+            <button class="profile-button" type="button">查看资料</button>
+          </div>
+          <div class="identity-copy">
+            <h2 class="member-name">郑长标(TIL551V02)</h2>
+            <span class="member-type">商务通-配偶卡</span>
+          </div>
+        </div>
 
-        .cus-tabbar-item {
-            width: 0;
-            flex-grow: 1;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        <div class="dynamic-code">
+          <time class="member-time" data-member-clock>07-22 22:31:28</time>
+          <div class="qr-wrap">
+            <div class="member-qr" data-member-qr role="img" aria-label="E-Card 动态码" aria-live="polite"></div>
+          </div>
+        </div>
 
-        .cus-tabbar-item > img {
-            width: 30px;
-            height:30px;
-        }
+        <div class="refresh-row">
+          <span>E-Card动态码 5 分钟更新，请勿泄露</span>
+          <button class="refresh-button" type="button" data-refresh-code aria-label="刷新动态码">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M18.3 9A7 7 0 0 0 6.5 6.5L4 9m16 6-2.5 2.5A7 7 0 0 1 5.7 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+            <span>刷新</span>
+          </button>
+        </div>
+      </article>
+    </section>
 
-        .cus-tabbar-item > span {
-        }
-    </style>
-
-    <script>
-        //页面初始化
-        $(function () {
-            $('.cus-tabbar-item').each(function () {
-                tabChange(this);
-            });
-        });
-
-
-        function tabChange(oneTab) {
-            var imgPath = '../img/FootTabbar/';
-            var curHerf = window.location.pathname.toLowerCase();
-
-            if ($(oneTab)[0].id == "tabIndex" && (curHerf.indexOf("/index.aspx") >= 0 || curHerf.indexOf("/indexhk.aspx") >= 0)) {
-                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_home_bs.png');
-                return false;
-            }
-
-            if ($(oneTab)[0].id == "tabOrder" && curHerf.indexOf("/orderlist.aspx") >= 0) {
-                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_dd_bs.png')
-                return false;
-            }
-
-            if ($(oneTab)[0].id == "tabMemberCard" && curHerf.indexOf("/mycard.aspx") >= 0) {
-                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyk_bs.png')
-                return false;
-            }
-
-            if ($(oneTab)[0].id == "tabStatements" && curHerf.indexOf("/statementsmonthly.aspx") >= 0) {
-                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_yjd_bs.png')
-                return false;
-            }
-
-            if ($(oneTab)[0].id == "tabCenter" && curHerf.indexOf("/personalcenter.aspx") >= 0) {
-                $($(oneTab).find("img")[0]).attr('src', imgPath + 'foot_hyzx_bs.png')
-                return false;
-            }
-        }
-
-        function goPage(index) {
-            var curHerf = window.location.pathname.toLowerCase();
-
-            if (index == 0) {
-                window.location.href = "../Index.aspx";
-            }
-            else if (index == 1 && curHerf.indexOf("/orderlist.aspx") < 0) {
-                window.location.href = "../User/OrderList.aspx";
-            }
-            else if (index == 2 && curHerf.indexOf("/mycard.aspx") < 0) {
-                window.location.href = "../img.html";
-            }
-            else if (index == 3 && curHerf.indexOf("/statementsmonthly.aspx") < 0) {
-                window.location.href = "../Account/StatementsMonthly.aspx";
-            }
-            else if (index == 4 && curHerf.indexOf("/personalcenter.aspx") < 0) {
-                window.location.href = "../User/PersonalCenter.aspx";
-            }
-        }
-    </script>
-
-
-    <script type="text/javascript">
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?01253411631a2613e973b389349750f8";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
-</div>
-</form>
+    <nav class="tabbar" aria-label="主导航">
+      <a class="tabbar-item" href="index.html">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 14.5 16 4l12 10.5M7.5 13v14h6v-8h5v8h6V13"/></svg>
+        <span>首页</span>
+      </a>
+      <span class="tabbar-item" aria-disabled="true">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="5" width="18" height="23" rx="2"/><path d="M12 4v4m8-4v4m-8 6h8m-8 5h8m-8 5h5"/></svg>
+        <span>订单</span>
+      </span>
+      <a class="tabbar-item is-active" href="img.html" aria-current="page">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><g class="golf-ball-dots"><circle cx="12" cy="12" r="1"/><circle cx="17" cy="9" r="1"/><circle cx="21" cy="13" r="1"/><circle cx="10" cy="18" r="1"/><circle cx="16" cy="17" r="1"/><circle cx="21" cy="20" r="1"/><circle cx="14" cy="23" r="1"/></g></svg>
+        <span>会员卡</span>
+      </a>
+      <span class="tabbar-item" aria-disabled="true">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="5" width="18" height="23" rx="2"/><path d="M11 11h10M11 16h10m-10 5h6"/></svg>
+        <span>月结单</span>
+      </span>
+      <span class="tabbar-item" aria-disabled="true">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="5"/><path d="M6 28c.7-6.6 4-10 10-10s9.3 3.4 10 10"/></svg>
+        <span>我的</span>
+      </span>
+    </nav>
+  </main>
+  <script src="js/vendor/qrcode.js"></script>
+  <script src="js/mission-hills-app.js"></script>
 </body>
 </html>
