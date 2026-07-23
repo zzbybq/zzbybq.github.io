@@ -71,46 +71,6 @@ button {
   letter-spacing: .02em;
 }
 
-.mini-capsule {
-  position: absolute;
-  z-index: 3;
-  top: calc(14px + env(safe-area-inset-top));
-  right: 12px;
-  display: flex;
-  width: 88px;
-  height: 32px;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid rgb(0 0 0 / 8%);
-  border-radius: 18px;
-  background: rgb(255 255 255 / 78%);
-  color: #111;
-  font-size: 19px;
-  line-height: 1;
-  backdrop-filter: blur(10px);
-}
-
-.mini-capsule::after {
-  width: 15px;
-  height: 15px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 4px #fff, inset 0 0 0 6px currentColor;
-  content: "";
-}
-
-.mini-capsule-dots {
-  padding: 0 2px 6px;
-  letter-spacing: 2px;
-}
-
-.mini-capsule-line {
-  width: 13px;
-  height: 3px;
-  border-radius: 2px;
-  background: currentColor;
-}
-
 .home-shell {
   background: #5ba3dd;
 }
@@ -127,6 +87,18 @@ button {
 
 .home-hero.is-dragging {
   cursor: grabbing;
+}
+
+.home-hero::after {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 36%;
+  height: 11%;
+  background: linear-gradient(180deg, #5ca3dc 0%, #5ba3dd 100%);
+  content: "";
+  pointer-events: none;
 }
 
 .home-slides {
