@@ -53,24 +53,6 @@ button {
   box-shadow: 0 0 30px rgb(0 0 0 / 10%);
 }
 
-.mini-header {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  height: calc(92px + env(safe-area-inset-top));
-  padding-top: env(safe-area-inset-top);
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.mini-title {
-  margin-top: 13px;
-  font-size: 19px;
-  font-weight: 400;
-  letter-spacing: .02em;
-}
-
 .home-shell {
   background: #5ba3dd;
 }
@@ -437,7 +419,6 @@ button {
 
 @media (max-height: 760px) {
   :root { --nav-height: 78px; }
-  .mini-header { height: calc(80px + env(safe-area-inset-top)); }
   .member-content { padding-top: 14px; }
   .carousel-dot { margin: 8px auto; }
   .member-panel { min-height: 365px; padding-top: 18px; }
